@@ -18,4 +18,4 @@ async function connectDb(){
         console.error(`Error details: ${err.message}`);
     }
 }
-module.exports = {pool, connectDb};
+module.exports = { pool, connectDb };
