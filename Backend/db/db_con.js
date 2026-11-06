@@ -7,6 +7,10 @@ const pool = new Pool({
     username: process.env.DB_OWNER,
     password: process.env.DB_PASSWORD,
     port: process.env.DB_PORT,
+    max: 10,
+    idleTimeoutMillis: 60000,
+    connectionTimeoutMillis: 5000,
+    keepAlive: true,
 })
 
 async function connectDb(){

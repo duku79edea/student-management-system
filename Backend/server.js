@@ -3,6 +3,14 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const { pool, connectDb} = require('./db/db_con');
 
+const createStudent = require("./routes/createStudentRoute.js");
+
+app.use(express.json());
+
+//STUDENTS ENDPOINT
+app.use('/api', createStudent);
+
+//HEALTH CHECK ENDPOINT
 app.get('/api/health', async (req, res) => {
   const healthStatus = {
       status: "UP",
